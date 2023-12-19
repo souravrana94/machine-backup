@@ -1,5 +1,5 @@
 name: s3test
-on: [push]
+on: [workflow_dispatch]
 jobs: 
   build:
     runs-on: ubuntu-latest
@@ -29,5 +29,6 @@ jobs:
           aws-region: us-east-1
       - name: Deploy static site to S3
         run: aws s3 sync ./build s3://s3backupmachine
+      
 
       
